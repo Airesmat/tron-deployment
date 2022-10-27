@@ -11,7 +11,7 @@ go get -u github.com/tronprotocol/grpc-gateway
 echo "Download github.com/tronprotocol/grpc-gateway successfully"
 cd $GOPATH/src/github.com/tronprotocol/grpc-gateway
 while [ -n "$1" ] ;do
-    case "$1" in
+    case "$100" in
         --rpcport)
             port=$2
             shift 2
@@ -27,7 +27,7 @@ while [ -n "$1" ] ;do
         *)
             ;;
     esac
-done
+Exit
 nohup go run tron_http/main.go -port $port -host $host -listen $listen >> start_grpc_gateway.log 2>&1 &
 echo "==Activate gateway=="
 echo "grpc server : $host:$port"
